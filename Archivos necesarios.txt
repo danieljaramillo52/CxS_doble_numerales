@@ -1,0 +1,32 @@
+Tenemos la siguiente estructura de Arbol para el proyecto. 
+
+CXS_parte2/
+├── Insumos/
+│   ├── DB/
+│   ├── Drivers/
+│   ├── Plano CXS B2 - Cadenas.xlsx
+│   ├── Plano CXS B2 - Directa.xlsx
+│   ├── Plano CXS B2 - Droguerias.xlsx
+│   └── Plano CXS B2 – Indirecta.xlsx
+├── Documentacion/
+│   ├── ManualdeUsuario.md
+│   └── Readme.md
+├── Scripts/
+│   ├── Base_cxs_no_numerales.py
+│   ├── Depuracion_CxS_Est.py
+│   ├── Lectura_bases_drivers_excel.py
+│   ├── main.py
+│   ├── Transformaciones_cadenas.py
+│   ├── Transformaciones_directa.py
+│   ├── Transformaciones_droguerias.py
+│   └── Transformaciones_indirecta.py
+├── .vscode/
+└── Utils/
+    ├── __pycache__/
+    ├── __init__.py
+    ├── General_Functions.py
+    └── Transformation_Functions.py
+
+Todos los archivos dentro de la carpeta Insumos son proveidos por comercial nutresa.
+Bajo el proceso de CxS: A cargo de Santiago Lopez. Por motivos de seguridad de información. Y ahorro de memoria. 
+No se suben los correspondientes archivos. 

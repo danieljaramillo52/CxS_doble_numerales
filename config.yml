@@ -1,0 +1,762 @@
+#Archivo de configuración del proyecto. 
+Meses_a_actualizar:
+  - "ENE 2024"
+  - "FEB 2024"
+  - "MAR 2024"
+  - "ABR 2024"
+  - "MAY 2024"
+  - "JUN 2024"
+  - "JUL 2024"
+  - "AGO 2024"
+  - "SEP 2024"
+  - "OCT 2024"
+  - "NOV 2024"
+  - "DIC 2024"
+
+# Configuración de los meses del año
+dict_meses:
+  "001" : "ENE 2024"  
+  "002" : "FEB 2024" 
+  "003" : "MAR 2024" 
+  "004" : "ABR 2024" 
+  "005" : "MAY 2024" 
+  "006" : "JUN 2024" 
+  "007" : "JUL 2024" 
+  "008" : "AGO 2024" 
+  "009" : "SEP 2024" 
+  "010" : "OCT 2024" 
+  "011" : "NOV 2024" 
+  "012" : "DIC 2024" 
+
+ruta_base: C:\Users\DanielJaramilloBusta\OneDrive - XPERTGROUP S.A.S\Daniel - Staffing CN\Proyectos Comercial Nutresa\CxS_parte2\Insumos\DB
+
+#dir insumos de la automatización. 
+dir_insumos_resultados : 
+  Insumos : "Insumos/"
+  Resultados : "Resultados/"
+
+#Insumos de la automatización. 
+Insumos : 
+  path_insumos: "Insumos/" #Representa el nombre del directorio donde están contenidos. 
+  path_drivers: "Insumos/Drivers/"
+  path_db: "Insumos/DB/Dinamica"
+
+  plano_cxs_cadenas: 
+    nom_base : "Plano CXS B2 - Cadenas.xlsx" 
+    nom_hoja: "Plano Cadenas"
+    cols: 23
+    
+    cols_necesarias:
+      - Mes
+      - Desc Oficina de Ventas
+      - Desc Sector
+      - Formato
+      - Segmento
+      - Ventas Netas
+      - Total Descuentos
+      - Dctos NG
+    
+    cols_cambiar_tipo : 
+      - Ventas Netas
+      - Total Descuentos
+      - Dctos NG
+    
+    Renombrar_cols_cadenas:
+      Mes: "Mes"
+      Desc Oficina de Ventas: "Oficina_ventas"
+      Desc Sector: "Sector"
+      Formato: "Formato"
+      Segmento: "Segmento_Agrup"
+      Ventas_Efectivas: "Ventas_Efectivas"
+      Descuentos: "Descuentos"
+      Dctos_Grupo: "Dctos_Grupo"
+      Descuentos_CN: "Descuentos_CN"
+      Descuentos_NG: "Descuentos_NG"
+      Depuracion_Dctos: "Depuracion_Dctos"
+      Ventas_Netas_Grupo: "Ventas_Netas_Grupo"
+      Ventas_Netas_CN: "Ventas_Netas_CN"
+      Ventas_Efectivas_Final: "Ventas_Efectivas_Final"
+      Ventas_Efectivas_Grupo: "Ventas_Efectivas_Grupo"
+      Devoluciones_malas: "Devoluciones_malas"
+      Gasto_Prom_Comercializadores: "Gasto_Prom_Comercializadores"
+      Total_Gastos_CN: "Total_Gastos_CN"
+      Oficina_ventas_Agrup: "Oficina_ventas_Agrup"
+
+    
+  plano_cxs_directa: 
+    nom_base: "Plano CXS B2 - Directa.xlsx" 
+    
+    nom_hoja: "Plano Directa"
+    
+    cols: 15
+    
+    cols_necesarias: 
+      - Mes
+      - Desc Oficina de Ventas
+      - Desc Sector
+      - Segmento
+      - Ventas Netas
+      - Total Descuentos
+      - Dctos NG
+    
+    cols_cambiar_tipo:
+      - Ventas Netas 
+      - Total Descuentos 
+      - Dctos NG 
+        
+    dict_reemplazar_formato:
+     "-" : "Sin asignar"
+    
+    Renombrar_cols_directa:
+      Mes: "Mes"
+      Desc Oficina de Ventas: "Oficina_ventas"
+      Desc Sector: "Sector"
+      Segmento: "Segmento_Agrup"
+      Ventas_Efectivas: "Ventas_Efectivas"
+      Descuentos: "Descuentos"
+      Dctos_Grupo: "Dctos_Grupo"
+      Descuentos_CN: "Descuentos_CN"
+      Descuentos_NG: "Descuentos_NG"
+      Depuracion_Dctos: "Depuracion_Dctos"
+      Ventas_Netas_Grupo: "Ventas_Netas_Grupo"
+      Ventas_Netas_CN: "Ventas_Netas_CN"
+      Ventas_Efectivas_Final: "Ventas_Efectivas_Final"
+      Ventas_Efectivas_Grupo: "Ventas_Efectivas_Grupo"
+      Devoluciones_malas: "Devoluciones_malas"
+      Gasto_Prom_Comercializadores: "Gasto_Prom_Comercializadores"
+      Total_Gastos_CN: "Total_Gastos_CN"
+      Oficina_ventas_Agrup: "Oficina_ventas_Agrup"
+
+  plano_cxs_droguerias: 
+    nom_base: "Plano CXS B2 - Droguerías.xlsx" 
+    
+    nom_hoja: "Plano DR"
+    
+    cols: 17
+    
+    cols_necesarias: 
+      - Mes
+      - Desc Oficina de Ventas
+      - Desc Sector
+      - Formato
+      - Segmento
+      - Ventas Netas
+      - Total Descuentos
+      - Dctos NG
+    
+    cols_cambiar_tipo:
+      - Ventas Netas 
+      - Total Descuentos 
+      - Dctos NG 
+    
+
+    Renombrar_cols_droguerias:
+      Mes: "Mes"
+      Desc Oficina de Ventas: "Oficina_ventas"
+      Desc Sector: "Sector"
+      Segmento: "Segmento_Agrup"
+      Ventas_Efectivas: "Ventas_Efectivas"
+      Descuentos: "Descuentos"
+      Dctos_Grupo: "Dctos_Grupo"
+      Descuentos_CN: "Descuentos_CN"
+      Descuentos_NG: "Descuentos_NG"
+      Depuracion_Dctos: "Depuracion_Dctos"
+      Ventas_Netas_Grupo: "Ventas_Netas_Grupo"
+      Ventas_Netas_CN: "Ventas_Netas_CN"
+      Ventas_Efectivas_Final: "Ventas_Efectivas_Final"
+      Ventas_Efectivas_Grupo: "Ventas_Efectivas_Grupo"
+      Devoluciones_malas: "Devoluciones_malas"
+      Gasto_Prom_Comercializadores: "Gasto_Prom_Comercializadores"
+      Total_Gastos_CN: "Total_Gastos_CN"
+      Oficina_ventas_Agrup: "Oficina_ventas_Agrup"
+
+  plano_cxs_indirecta: 
+    
+    nom_base: "Plano CXS B2 - Indirecta.xlsx" 
+    
+    nom_hoja:  "Plano Indirecta"
+    cols: 20
+    
+    cols_necesarias: 
+      - Oficina
+      - Negocio
+      - Cod cliente
+      - Nombre cliente 
+      - Segmento 
+      - Mes
+      - Ventas
+      - Total Descuentos
+      - Dctos NG
+      - Cesantía
+    
+    cols_cambiar_tipo:
+      - Ventas
+      - Total Descuentos
+      - Dctos NG
+      - Cesantía
+
+    Renombrar_cols_indirecta:
+      Mes: "Mes"
+      Oficina: "Oficina_ventas"
+      Cod cliente : "Cod cliente"
+      Negocio: "Sector"
+      Segmento: "Segmento_Agrup"
+      Ventas_Efectivas: "Ventas_Efectivas"
+      Descuentos: "Descuentos"
+      Dctos_Grupo: "Dctos_Grupo"
+      Descuentos_CN: "Descuentos_CN"
+      Descuentos_NG: "Descuentos_NG"
+      Depuracion_Dctos: "Depuracion_Dctos"
+      Ventas_Netas_Grupo: "Ventas_Netas_Grupo"
+      Ventas_Netas_CN: "Ventas_Netas_CN"
+      Ventas_Efectivas_Final: "Ventas_Efectivas_Final"
+      Ventas_Efectivas_Grupo: "Ventas_Efectivas_Grupo"
+      Devoluciones_malas: "Devoluciones_malas"
+      Gasto_Prom_Comercializadores: "Gasto_Prom_Comercializadores"
+      Total_Gastos_CN: "Total_Gastos_CN"
+      Oficina_ventas_Agrup: "Oficina_ventas_Agrup"
+      Nombre cliente: "Cliente"
+ 
+  Driver_CxS_P2:
+    nom_base : "Drivers.xlsx" 
+    nom_hoja: Drivers
+    cols: 5
+    cols_necesarias_sa: 
+      - Segmentos 
+      - Segmento Agrupado
+    cols_necesarias_nc:
+      - Nom_cliente
+      - Nom_clien_act
+  
+  Driver_Nit_agente:
+    nom_base : "Driver_Nit_Agentes.xlsx" 
+    nom_hoja: Driver_Nit_Agentes
+    cols: 3
+    cols_necesarias:
+     - Cod cliente
+     - Formato_NIF
+    
+  
+  Driver_cols_faltantes_planos:
+   nom_base : "Driver_completar_planos.xlsx" 
+   nom_hoja: Driver
+   cols: 12
+   Filtros:
+    Cadenas:
+     Columna: Plano 
+     Valor: Cadenas
+     cols_necesarias:
+      - Canal 
+      - Subcanal
+      - Canal_Trans
+      - Subcanal_Trans
+      - Segmento_Agrup
+      - Formato
+      - Formato_NIF
+      - Cliente
+      - Centro_Costo
+      - Nombre_Centro_Costo
+      - Tipo
+    Directa:
+     Columna: Plano
+     Valor: Directa
+     cols_necesarias:
+      - Canal 
+      - Subcanal
+      - Canal_Trans
+      - Subcanal_Trans
+      - Segmento_Agrup
+      - Formato
+      - Formato_NIF
+      - Cliente
+      - Centro_Costo
+      - Nombre_Centro_Costo
+      - Tipo
+    Indirecta:
+     Columna: Plano
+     Valor: Indirecta
+     cols_necesarias:
+      - Canal 
+      - Subcanal
+      - Canal_Trans
+      - Subcanal_Trans
+      - Segmento_Agrup
+      - Formato
+      - Centro_Costo
+      - Nombre_Centro_Costo
+      - Tipo
+    Droguerias: 
+     Columna: Plano
+     Valor: Droguerias
+     cols_necesarias:
+      - Canal 
+      - Subcanal
+      - Canal_Trans
+      - Subcanal_Trans
+      - Segmento_Agrup
+      - Formato_NIF
+      - Cliente
+      - Centro_Costo
+      - Nombre_Centro_Costo
+      - Tipo
+    
+  db_cxs_dinamico: 
+    nom_base: 
+      Estatica : "Insumo_cxs_dinamico.db"
+    
+    nom_tabla:
+      "Dinamica": consolidado
+      "Estatica": insumo_cxs
+    
+    cols_numericas_restantes:
+      - Ventas_Efectivas
+      - Descuentos
+      - Gasto_Prom_Comercializadores
+      - Descuentos_NG
+      - Depuracion_Dctos
+      - Dctos_Grupo
+      - Ventas_Efectivas_Grupo
+      - Descuentos_CN
+      - Ventas_Netas_CN
+      - Ventas_Netas_Grupo
+      - Devoluciones_malas
+      - Ventas_Efectivas_Final
+    
+    cols_numericas_completas:
+      - Ventas_Efectivas
+      - Descuentos
+      - Gasto_Prom_Comercializadores
+      - Descuentos_NG
+      - Depuracion_Dctos
+      - Dctos_Grupo
+      - Ventas_Efectivas_Grupo
+      - Descuentos_CN
+      - Ventas_Netas_CN
+      - Ventas_Netas_Grupo
+      - Devoluciones_malas
+      - Ventas_Efectivas_Final
+      - Total_Gastos_CN
+
+    cols_finales_planos:
+      - "Mes"
+      - "Sector"
+      - "Canal"
+      - "Subcanal"
+      - "Canal_Trans"
+      - "Subcanal_Trans"
+      - "Oficina_ventas"
+      - "Formato"
+      - "Formato_NIF"
+      - "Segmento_Agrup"
+      - "Centro_Costo"
+      - "Nombre_Centro_Costo"
+      - "Ventas_Efectivas"
+      - "Descuentos"
+      - "Gasto_Prom_Comercializadores"
+      - "Descuentos_NG"
+      - "Total_Gastos_CN"
+      - "Depuracion_Dctos"
+      - "Dctos_Grupo"
+      - "Ventas_Efectivas_Grupo"
+      - "Descuentos_CN"
+      - "Ventas_Netas_CN"
+      - "Ventas_Netas_Grupo"
+      - "Cliente"
+      - "Oficina_ventas_Agrup"
+      - "Devoluciones_malas"
+      - "Ventas_Efectivas_Final"
+      - "Tipo"
+
+    cols_concat_act_final:
+      - "Mes"
+      - "Centro_Costo"
+      - "Tipo"
+
+    cols_agrup_planos_final:
+     - "Mes"
+     - "Sector"
+     - "Canal"
+     - "Subcanal"
+     - "Canal_Trans"
+     - "Subcanal_Trans"
+     - "Oficina_ventas"
+     - "Formato"
+     - "Formato_NIF"
+     - "Segmento_Agrup"
+     - "Centro_Costo"
+     - "Nombre_Centro_Costo"
+     - "Cliente"
+     - "Oficina_ventas_Agrup"
+     - "Tipo"
+    cols_sum_planos_final:
+     - "Ventas_Efectivas"
+     - "Descuentos"
+     - "Gasto_Prom_Comercializadores"
+     - "Descuentos_NG"
+     - "Total_Gastos_CN"
+     - "Depuracion_Dctos"
+     - "Dctos_Grupo"
+     - "Ventas_Efectivas_Grupo"
+     - "Descuentos_CN"
+     - "Ventas_Netas_CN"
+     - "Ventas_Netas_Grupo"
+     - "Devoluciones_malas"
+     - "Ventas_Efectivas_Final"
+    cols_sum_agrup_rename:
+     "Ventas_Efectivas_sum": "Ventas_Efectivas"
+     "Descuentos_sum": "Descuentos"
+     "Gasto_Prom_Comercializadores_sum": "Gasto_Prom_Comercializadores"
+     "Descuentos_NG_sum": "Descuentos_NG"
+     "Total_Gastos_CN_sum": "Total_Gastos_CN"
+     "Depuracion_Dctos_sum": "Depuracion_Dctos"
+     "Dctos_Grupo_sum": "Dctos_Grupo"
+     "Ventas_Efectivas_Grupo_sum": "Ventas_Efectivas_Grupo"
+     "Descuentos_CN_sum": "Descuentos_CN"
+     "Ventas_Netas_CN_sum": "Ventas_Netas_CN"
+     "Ventas_Netas_Grupo_sum": "Ventas_Netas_Grupo"
+     "Devoluciones_malas_sum": "Devoluciones_malas"
+     "Ventas_Efectivas_Final_sum": "Ventas_Efectivas_Final"
+
+
+    sql_queries:
+      #consulta_cc: >
+      #  SELECT
+      #    NUMERO_CECO,
+      #    NOMBRE_CECO,
+      #    MES,
+      #    OFICINA_VENTAS,
+      #    CANAL,
+      #    SUB_CANAL,
+      #    TIPOLOGIA,
+      #    NIT,
+      #    FORMATO,
+      #    SECTOR,
+      #    CLIENTE,
+      #    TOTAL_GASTOS_CN,
+      #    SUB_CANAL_TRANS,
+      #    CANAL_AJUST,
+      #    TIPO
+      #  FROM consolidado
+
+      cols_agregar_cols_planos:
+        - Ventas_Efectivas
+        - Descuentos
+        - Gasto_Prom_Comercializadores
+        - Descuentos_NG
+        - Depuracion_Dctos
+        - Dctos_Grupo
+        - Ventas_Efectivas_Grupo
+        - Descuentos_CN
+        - Ventas_Netas_CN
+        - Ventas_Netas_Grupo
+        - Devoluciones_malas
+        - Ventas_Efectivas_Final
+
+      cols_consulta_numeral:
+        - "Mes"
+        - "Sector"
+        - "Canal"
+        - "Subcanal"
+        - "Canal_Trans"
+        - "Subcanal_Trans"
+        - "Oficina_ventas"
+        - "Oficina_ventas_Agrup"
+        - "Formato"
+        - "Formato_NIF"
+        - "Segmento_Agrup"
+        - "Cliente"
+        - "Tipo"
+        - "Total_Gastos_CN" 
+        - "Centro_Costo" 
+        - "Nombre_Centro_Costo"
+      
+      cols_filtrar_consulta:
+        - "Mes"
+        - "Sector"
+        - "Canal"
+        - "Subcanal"
+        - "Canal_Trans"
+        - "Subcanal_Trans"
+        - "Oficina_ventas"
+        - "Oficina_ventas_Agrup"
+        - "Formato"
+        - "Formato_NIF"
+        - "Segmento_Agrup"
+        - "Cliente"
+        - "Tipo"
+
+      cols_consulta_consolidado:
+        - Centro_Costo 
+        - Nombre_Centro_Costo
+        - Mes
+        - Oficina_ventas
+        - Canal_Trans
+        - Subcanal
+        - Segmento
+        - Formato_NIF
+        - Formato
+        - Sector
+        - Cliente 
+        - Total_Gastos_CN
+        - Subcanal_Trans
+        - Canal
+        - Tipo
+
+          
+    cols_eliminar_cad_drog: 
+        - Mes
+        - Sector
+        - Oficina_ventas
+        - Tipo 
+      
+    cols_eliminar_dir:
+        - Mes 
+        - Sector
+        - Oficina_ventas
+        - Tipo 
+        - Formato_NIF
+        - Formato
+        - Cliente
+      
+    cols_eliminar_indir:
+        - Mes 
+        - Sector
+        - Oficina_ventas
+        - Tipo 
+        - Formato_NIF
+        - Formato
+
+    cols_concatenar_cn_sbc_cnt_sbct:
+        - Canal 
+        - Subcanal
+        - Canal_Trans
+        - Subcanal_Trans 
+      
+    cols_con_guion:
+      cols:
+        - "Formato"
+        - "Cliente"
+        - "Formato_NIF"
+      dict_reemplazo: 
+          "-" : "Sin asignar"
+
+
+
+    #Cols que se le agregaran a los planos ("Canal , SubCanal, Canal_Trans, Subcanal_Trans" col Segmento_Agrup clave para join con los planos.)
+    cols_agregar_planos : 
+      - "Canal"
+      - "Subcanal"
+      - "Canal_Trans"
+      - "Subcanal_Trans"
+      - "Segmento_Agrup"
+
+
+keys_tablas_transform:
+  - "plano_cxs_cadenas"
+  - "plano_cxs_directa"
+  - "plano_cxs_droguerias"
+  - "plano_cxs_indirecta"
+  - "driver_completar_planos"
+  - "driver_nit_agentes"
+
+dict_meses_afpha:
+  "ENE" : "ENE 2024"  
+  "FEB" : "FEB 2024" 
+  "MAR" : "MAR 2024" 
+  "ABR" : "ABR 2024" 
+  "MAY" : "MAY 2024" 
+  "JUN" : "JUN 2024" 
+  "JUL" : "JUL 2024" 
+  "AGO" : "AGO 2024" 
+  "SEP" : "SEP 2024" 
+  "OCT" : "OCT 2024" 
+  "NOV" : "NOV 2024" 
+  "DIC" : "DIC 2024"
+
+#Diccionario configuración oficina de vtas.
+dict_ofic_vtas:
+  "11" : "R Bogota Norte"
+  "12" : "R Bucaramanga"
+  "13" : "R Cali"
+  "14" : "R Ibague"
+  "16" : "R Medellin"
+  "17" : "R Altillano"
+  "20" : "R Barranquilla"
+  "23" : "R Cartagena"
+  "25" : "R Pereira"
+
+dict_ofic_vtas_agrup: 
+  "R Bogota Norte": "Bogota"
+  "R Cartagena": "Costa"
+  "R Barranquilla": "Costa"
+  "R Bucaramanga": "Santanderes"
+  "R Medellin": "Antioquia"
+  "R Pereira": "Suroccidente"
+  "R Altillano": "Altillano"
+  "R Cali": "Suroccidente"
+  "R Ibague": "Tolima - Huila"
+  "R Neiva": "Tolima - Huila"
+  "R Bogota Autoserv.": "Bogota"
+  "R Bogota": "Bogota"
+  "R General Nacional": "Central"
+  "R Oficina Central": "Central"
+  "R Bogota Sur": "Bogota"
+
+
+#Diccionario configuración sector
+dict_sector:
+  "01" : "Carnico"
+  "02" : "Galletas"
+  "03" : "Chocolates"
+  "04" : "Café"
+  "05" : "Pastas"
+  "08" : "Distribuidos"
+  "09" : "Emprendimientos"
+  "16" : "Culinarios"
+  
+
+#Diccionario que srive como directorio de las columnas calculadas para las plantillas  Cadenas, Dorguerias, Directa.
+
+cols_calculadas_cad_drog_dir: 
+  cols_cambiar_tipo : 
+    - Ventas Netas
+    - Total Descuentos
+    - Dctos NG
+
+  sum_cols: 
+    Ventas_Efectivas:
+        - Ventas Netas
+        - Total Descuentos
+    
+  duplicar_cols:
+    Total Descuentos:
+      - Descuentos
+      - Dctos_Grupo
+      - Descuentos_CN
+    Dctos_NG: 
+      - Descuentos_NG
+      - Depuracion_Dctos
+    Ventas Netas:
+        - Ventas_Netas_Grupo
+        - Ventas_Netas_CN
+    Ventas_Efectivas:
+      - Ventas_Efectivas_Final
+      - Ventas_Efectivas_Grupo
+    Desc Oficina de Ventas:
+      - Oficina_ventas_Agrup
+
+  cols_nul: 
+    Devoluciones_malas : 0
+    Gasto_Prom_Comercializadores : 0
+    Total_Gastos_CN : 0 
+
+cols_calculadas_indir: 
+  cols_cambiar_tipo : 
+    - Ventas
+    - Total Descuentos
+    - Dctos NG
+    - Cesantía
+
+  sum_cols: 
+    Ventas_Efectivas:
+        - Ventas
+        - Total Descuentos
+        - Cesantía
+    Descuentos:
+        - Total Descuentos 
+        - Cesantía
+  
+  sustrac_cols: 
+    Ventas_Netas_Grupo:
+        col_minuendo : Ventas
+        col_sustrayendo: Cesantía
+  
+  duplicar_cols:
+    Total Descuentos:
+     key: 
+      Total Descuentos
+     cols:
+      - Descuentos_CN
+    Dctos NG: 
+     key: Dctos NG
+     cols:
+      - Descuentos_NG
+      - Depuracion_Dctos
+    Descuentos:
+     key: Descuentos
+     cols:
+      - Dctos_Grupo
+    Ventas:
+     key: Ventas
+     cols:
+      - Ventas_Netas_CN
+    Ventas_Efectivas:
+     key: Ventas_Efectivas
+     cols:
+      - Ventas_Efectivas_Final
+      - Ventas_Efectivas_Grupo
+    Cesantía:
+      key: Cesantía
+      cols:
+       - Gasto_Prom_Comercializadores
+    Oficina:
+     key: Oficina
+     cols: 
+       - Oficina_ventas_Agrup
+
+  cols_nul: 
+    Devoluciones_malas : 0
+    Total_Gastos_CN : 0 
+  
+
+# cols_cambiar_tipo = cols a transformar (string) => (float)
+
+# sum_cols: cols para sumar. cada clave del diccionario es columna resultado, cada elemento dentro de esta clave, los sumnados: 
+# Ejm: Ventas_Efectivas = Ventas Netas + Total Descuentos. 
+
+# duplicar_cols: Columnas a duplicar en la tabla. Cada clave del diccionario será el nombre de la columna a duplicar, los elementos dentro de cada clave , los nombres de la columna duplicada. Varios elementos significa varias duplicaciones. 
+
+# cols_nul:  Columnas nulas a generar. Cada elemento ( nombre asignados )
+
+dict_posibles_cols: 
+  Mes: Mes
+  Subcanal: "Subcanal"
+  Agente comercial: "Agente comercial" 
+  Sin asignar : "Sin asignar"
+  Ventas Netas: Ventas Netas
+  Ventas_Efectivas: Ventas_Efectivas
+  Ventas_Efectivas_Final : Ventas_Efectivas_Final
+  Total_Gastos_CN : Total_Gastos_CN
+  Dctos_NG : Dctos NG
+  Descuentos: "Descuentos"
+  Desc Oficina de Ventas : "Desc Oficina de Ventas"
+  Total_Descuentos : Total Descuentos
+  Devoluciones_malas: Devoluciones_malas
+  Gasto_Prom_Comercializadores: Gasto_Prom_Comercializadores
+  Segmento: "Segmento"
+  Segmentos: "Segmentos"
+  Segmento_Agrupado: "Segmento Agrupado"
+  Segmento_Agrup: "Segmento_Agrup"
+  Concatenada: "Concatenada"
+  Formato: "Formato"
+  Formato_NIF : "Formato_NIF"
+  Oficina : "Oficina"
+  Oficina_ventas: Oficina_ventas
+  Oficina_ventas_Agrup : "Oficina_ventas_Agrup"
+  Negocio: "Negocio"
+  Cliente : "Cliente"
+  Nombre_cliente : "Nombre cliente"
+  Ventas_Grupo : "Ventas Grupo"
+  Ventas_Netas_Grupo : "Ventas_Netas_Grupo"
+  Ventas : "Ventas"
+  Cesantía : Cesantía
+  Concatenada: Concatenada
+  doble_numeral : "#/#"
+  Tipo : "Tipo"
+  Presupuesto: "Presupuesto"
+  Centro_Costo : "Centro_Costo"
+  Nombre_Centro_Costo : "Nombre_Centro_Costo"
+  Directa: "Directa"
+  Indirecta: "Indirecta"
+  Cad_Drog:  "Cad_Cod"
+
