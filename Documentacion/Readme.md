@@ -8,30 +8,31 @@
    1.6 [Aclaraciones](#aclaraciones)
    
 [Archivos_necesarios_para_la_automatizacion](#archivos-necesarios-para-la-automatización)
-   2.1 [Consultas](#Lista-de-consultas-para-la-automatización-de-Comercial-Nutresa)
-    2.1.1 [Descripcion_consultas](#descripcion-consultas)
-    2.1.2 [Estructura_planos](#estructura-de-las-consultas)
-    2.1.3 [Recomendaciones_consultas](#recomendaciones-consultas)
-    2.1.4 [Ubicacion_de_las_consultas_de_ventas.](#ubicacion-de-las-consultas-de-ventas)
+   2.1 [Planos](#Lista-de-planos-para-la-automatización)
+    2.1.1 [Recomendaciones_planos](#recomendaciones-planos)
+    2.1.2 [Ubicacion_de_las_planos_de_ventas.](#ubicacion-de-los-planos-de-ventas-y-descuentos)
    2.2[Drivers](#drivers)
     2.2.1[Driver](#driver)
-    2.2.5[Recomendaciones y obligaciones para la manipulación de los Drivers.](#recomendaciones-y-obligaciones-drivers)
-   2.3[Archivos_de_ventas](#archivos-de-ventas)
-    2.3.1[Archivos_necesarios_de ventas](#archivos-necesarios-de-ventas)
+    2.2.2[Dirver_completar_planos](#driver_completar_planosxlsx)
+    2.2.3["Driver_nit_agente](#driver_nit_agentexlsx)
+    2.2.2[Recomendaciones y obligaciones para la manipulación de los Drivers.](#recomendaciones-y-obligaciones-drivers)
+    2.1.2 [Ubicacion_de_los_drivers.](#ubicacion-de-los-drivers)
+   2.3.1[Estructura_planos](#estructura-de-las-planos-de-información)
+   2.3.2[Estructura_Drivers](#estructura-de-los-drivers-de-información)
+   2.3.3["Estructura_y_desglose_resumen](#estructura-y-desglose-resumen)
 
 3. [Archivo_config.yml](#archivo-configyml)
-   3.1 [Estructura y Desglose. (Resumen)](#Estructura-y-Desglose-(Resumen))
    2.2 [Visualizaciones](#Visualizaciones-del-archivo-(config_yml))
-   3.3 [Contenido_y_estructura](#contenido-y-estructura-resumen)
-   3.4 [Glosario de constantes](#glosario-de-constantes-de-la-automatización)
-   3.5 [Parámetrizaciones_seguimiento a la inversión](#Parametrizaciones-requeridas-para-el-proceso-de-Seguimiento-a-la-inversión)
-   3.6 [NO_permitido_modificar](#NO-modificable)
-   3.7 [SI_permitido_modificar](#SI-modificable)
+   3.3 [Parametrizaciones_posibles](#parámetrizaciones-posibles)
+   3.4 [Modificaciones-básicas-de-los-parámetros-de-configuración.](#modificaciones-básicas-de-los-parámetros-de-configuración)
    3.8 [Adicional_NO_modificables](#listas-de-información-adicionales-no-modificables)
+   3.9 [Auxiliares_modifcables](#auxiliares-modificables-en-archivo-configyml)
 
-4. [Responsables](#responsables)
+4. [BD_CXS_Estatico](#bd_cxs_estatico)
 
-5. [Manual_de_usuario](#enlace-al-manual-de-usuario)
+5. [Responsables](#responsables)
+
+6. [Manual_de_usuario](#enlace-al-manual-de-usuario)
 
 # Proyecto de CxS (Costo por Servil) Parte 2
 
@@ -122,6 +123,7 @@ El archivo de base de datos sql, sobre el cual se realizan los cambios: **Insumo
 ## Aclaraciones
 
 - El proceso de CxS parte 2 tiene como objetivo la modificación de la Base del CXS, generada por la primera parte de esta automatización. Se modifica de dos formas como se aclaró anteriormente. De acuerdo al tipo de centro de Costo. Sea #/# o un Centro de Costo definido (Ejm: GNCH/43000900).
+- Esta automatización modificara la información para los centros de costo del tipo #/# , y en todo lo referente a valores de ventas, descuentos y cesantias.
 
 <hr></hr>
 <br></br>
@@ -130,6 +132,9 @@ El archivo de base de datos sql, sobre el cual se realizan los cambios: **Insumo
 # Archivos necesarios para la automatización.
 
 **Nota: Las siglas (NP) se refieren a nombre parámetrizable, es decir, manipulable el nombre del archivo que se debe actualizar posteriormente en el archivo config.yml**
+
+
+## Lista de planos para la automatización 
 
 #### <font color=red>**Plano CXS B2 Cadenas.xlsx**</font>
 
@@ -143,7 +148,7 @@ El archivo de base de datos sql, sobre el cual se realizan los cambios: **Insumo
 - **Formato de archivo:** Archivos Dinámicos / No contiene macros
 - **Macros necesarias para el proceso:** Ninguna
 
-![Consulta_No_DS](Img_Readme/Consulta_DS.png)
+![Plano_Cadenas](Img_Readme/Plano_Cad.png)
 
 
 #### <font color=red>**Plano CXS B2 Directa.xlsx**</font>
@@ -158,7 +163,7 @@ El archivo de base de datos sql, sobre el cual se realizan los cambios: **Insumo
 - **Formato de archivo:** Archivos Dinámicos / No contiene macros
 - **Macros necesarias para el proceso:** Ninguna
 
-![Consulta_No_DS](Img_Readme/Consulta_DS.png)
+![Plano_Directa](Img_Readme/Plano_Dir.png)
 
 #### <font color=red>**Plano CXS B2 Indirecta.xlsx**</font>
 
@@ -172,7 +177,7 @@ El archivo de base de datos sql, sobre el cual se realizan los cambios: **Insumo
 - **Formato de archivo:** Archivos Dinámicos / No contiene macros
 - **Macros necesarias para el proceso:** Ninguna
 
-![Consulta_No_DS](Img_Readme/Consulta_DS.png)
+![Plano_Indirecta](Img_Readme/Plano_Indir.png)
 
 #### <font color=red>**Plano CXS B2 Droguerías.xlsx**</font>
 
@@ -186,7 +191,7 @@ El archivo de base de datos sql, sobre el cual se realizan los cambios: **Insumo
 - **Formato de archivo:** Archivos Dinámicos / No contiene macros
 - **Macros necesarias para el proceso:** Ninguna
 
-![Consulta_No_DS](Img_Readme/Consulta_DS.png)
+![Plano_Droguerías](Img_Readme/Plano_Drog.png)
 
 #### <font color=red>**Base_datos.db**</font>
 
@@ -199,22 +204,11 @@ El archivo de base de datos sql, sobre el cual se realizan los cambios: **Insumo
 - **Lenguaje DB Utilizado** SQL
 - **Software_auxiliar** BD Browser (SQLite)
 
-![Consulta_No_DS](Img_Readme/Consulta_DS.png)
+![Consulta_No_DS](Img_Readme/BD_Estatico.png)
 
 
 
-### Estructura de las planos de información. 
-Se recomienda no preocuparse por las columnas que se le  adicionaran en el proceso a las consultas, revisar el archivo Estructura_planos.xlsx para poder conocer el formato, estructura y nombres de las columnas que debe tener de base cada consulta. Las modificaciones posteriores son trabajo y fin de la automatización 
-
-Para verificar la estructura necesaria de cada plano de información y las demás, siga estos pasos:
-
-1. Dirijase a la ruta `CxS_parte2/Documentacion`
-
-2. Abra el archivo `Estructura_planos.xlsx`.
-
-3. Consulte la hoja `Estructuras` para obtener información sobre la estructura de la consulta.
-
-### Recomendaciones planos y drivers. 
+### Recomendaciones planos.
 
 <ul id="requisitos">
   <li>No mover ni sacar de la carpeta insumos</li>
@@ -229,15 +223,15 @@ Para verificar la estructura necesaria de cada plano de información y las demá
 
 
 ## Ubicacion de los planos de ventas y descuentos.
-![Ruta_planos](Img_Readme/Ruta_consultas.png)
+![Ruta_planos](Img_Readme/Ruta_Planos.png)
 
-![Planos](Img_Readme/Consultas.png)
+
+![Planos](Img_Readme/Planos.png)
 
 ## Drivers.
 Estos son los archivos auxiliares, modificables, y parametrizables que sirven para modificar principalmente los datos, más no las estructuras de las planos de ventas (Cadenas , Directa, Indirecta y Droguerias). Se dividen en **Driver_completar_planos.xlsx, Driver_Nit_Agentes.xlsx y Drivers.xlsx**. Es preciso señalar, que los drivers no son excluyentes entre sí, es decir, ciertas modificaciones en los planos requieren de la interferencia e información añadida y parametrizada en 1, 2 o los **3 drivers**.
 
 Por lo tanto, es necesario para la automatización que los 3 se encuentren en la carpeta correspondiente, debidamente diligenciados para obtener los resultados esperados. Dentro de cada driver, En el archivo Drivers y utilidad se encuentra una explicación de la utilidad de cada uno de los drivers auxiliares de información. el usuario puede modificar los drivers cada vez que quiera en términos de datos, **pero en ningún caso en términos de estructura y organización ya que esto repercute en el desarrollo de la automatización**. Es igual de importante mantener la estructura de los drivers como de las correspondientes consultas de información.
-
 
 
 ## Drivers.xlsx
@@ -251,14 +245,14 @@ Por lo tanto, es necesario para la automatización que los 3 se encuentren en la
 
 * **Visual del Driver:**
 
+![Dirvers](Img_Readme/Driver_Drivers.png)
+
+#### Contenido 
 #### Parte 1 Drivers.xlsx + Explicacion.
-![Driver_NO_DS](Img_Readme/P1_Driver_NO_DS.png)
+![Driver_NO_DS](Img_Readme/P1_Driver_Drivers.png)
 
-#### Parte 2 Driver NO_DS + Explicacion.
-![Driver_NO_DS](Img_Readme/P1_Driver_NO_DS.png)
-
-![Dirvers](Img_Readme/Drivers.png)
-Nombre genérico para las hojas de los drivers. (Recomendado mantener). 
+#### Parte 2 Drivers + Explicacion.
+![Driver_NO_DS](Img_Readme/P2_Driver_Drivers.png)
 
 
 ## Driver_Completar_planos.xlsx
@@ -271,12 +265,11 @@ Nombre genérico para las hojas de los drivers. (Recomendado mantener).
 * **Hoja Necesaria:** (A parametrizar)
 
 * **Visual del Driver:**
+![Dirver](Img_Readme/Driver_completar_planos.png)
 
 #### Driver_completar_planos.xlsx Explicacion.
-![Driver_completar_planos](Img_Readme/P1_drv_completar_planos.png)
+![Driver_completar_planos](Img_Readme/P1_Driver_completar_planos.png)
 
-![Dirver](Img_Readme/Hoja_driver.png)
-Nombre genérico para las hoja del driver compeltar_planos.xlsx (Recomendado mantener). 
 
 ## Driver_Nit_Agente.xlsx
 
@@ -289,19 +282,20 @@ Nombre genérico para las hoja del driver compeltar_planos.xlsx (Recomendado man
 
 * **Visual del Driver:**
 
+![Driver_Nit_Agentes](Img_Readme/Driver_Nit_Agente.png)
+
 #### Driver_Nit_Agente.xlsx  +Explicacion.
-![Driver_completar_planos](Img_Readme/P1_drv_completar_planos.png)
+![Driver_Nit_Agentes](Img_Readme/P1_Driver_Nit_Agentes.png)
 
-![Dirver](Img_Readme/Hoja_driver.png)
-Nombre genérico para las hoja del driver compeltar_planos.xlsx (Recomendado mantener). 
-
+--- 
 
 ### Ubicacion de los drivers.
-![Ruta_Drivers](Img_Readme/Ruta_drivers.png)
+![Ruta_Drivers](Img_Readme/Ruta_Drivers.png)
 
 ![Drivers](Img_Readme/Drivers.png)
 
-#### Recomendaciones y obligaciones Drivers.
+
+### Recomendaciones y obligaciones Drivers.
 <ul>
     <li>No mover los archivos de la carpeta "Insumos".</li>
     <li>No eliminar ninguno de los 3 archivos mencionados anteriormente (solo se pueden modificar en nombredelarchivo y/o nombre de la hoja)</li>
@@ -316,16 +310,33 @@ Nombre genérico para las hoja del driver compeltar_planos.xlsx (Recomendado man
     <li><b>Es importante tener encuenta que puede haber nombres repetidos de columnas en los drivers, y esto no debe cambiarse en ninguna columna (nombres de sus columnas).</b></li>
     </ul>
 
+
+## Estructura de las planos de información. 
+Se recomienda no preocuparse por las columnas que se le  adicionaran en el proceso a los planos, revisar el archivo Estructura_planos_drivers.xlsx para poder conocer el formato, estructura y nombres de las columnas que debe tener de base cada plano. Las modificaciones posteriores son trabajo y fin de la automatización 
+
+Para verificar la estructura necesaria de cada plano de información y las demás, siga estos pasos:
+
+1. Dirijase a la ruta `CxS_parte2/Documentacion`
+
+2. Abra el archivo `Estructura_planos_drivers.xlsx`.
+
+3. Consulte la hoja `Estructura_planos` para obtener información sobre la estructura de la consulta.
+
+4. Consulte la hoja `Estructura_drivers` para obtener información sobre la estructura de la consulta.
+
+## Estructura de los Drivers de  información. 
+Se recomienda no preocuparse por las columnas que se le  adicionaran en el proceso a las driver, revisar el archivo Estructura_Drivers.xlsx para poder conocer el formato, estructura y nombres de las columnas que debe tener de base cada driver. Las modificaciones posteriores son trabajo y fin de la automatización 
+
+Para verificar la estructura necesaria de cada plano de información y las demás, siga estos pasos:
+
+1. Dirijase a la ruta `CxS_parte2/Documentacion`
+
+2. Abra el archivo `Estructura_planos_drivers.xlsx`.
+
+3. Consulte la hoja `Estructura_drivers` para obtener información sobre la estructura de la consulta.
 ---
 
-## Archivo (config.yml)
-![Archivo_cofing](Img_Readme/config_yml.png)
-
-* **Tipo de archivo**  Archivo yml (De parámetros)
-* **Formato del archivo** (yml) (Formato especial de archivo de texto para parametrizar)
-
-
-### Estructura y Desglose (Resumen)
+## Estructura y Desglose (Resumen)
 
 * **Planos** 
 1. Plano CXS B2 - Cadenas.xlsx
@@ -341,10 +352,18 @@ Nombre genérico para las hoja del driver compeltar_planos.xlsx (Recomendado man
 
 Estos son los nombres registrados en el archivo config.yml actualmente en funcionamiento a la fecha de entrega del manual. Los nombres como se ha dicho en este documento a fin de manejar un estándar, podrían mantenerse de esta manera y así ahorrar tiempo en temas de parametrización de los archivos.
 
+--- 
+
+## Archivo (config.yml)
+![Archivo_cofing](Img_Readme/config_yml.png)
+
+* **Tipo de archivo**  Archivo yml (De parámetros)
+* **Formato del archivo** (yml) (Formato especial de archivo de texto para parametrizar)
+
 ---
 
 ### Visualizaciones del archivo (config_yml) 
-`Diferentes visualizaciones del mismo archivo` 
+`Diferentes visualizaciones del mismo archivo "no exactas solo el tipo de vista"` 
 
 ![Ruta_Drivers](Img_Readme/visual_config_VSC.png)
 
@@ -386,14 +405,85 @@ Estos tres parámetros están identificados como:
 Similarmente para cada plano: 
 
 #### Plano Cadenas 
-![ELM_CAD](Img_Readme/Elementos_mod_no_mod_planos.png)
-
+![ELM_CAD](Img_Readme/Plano_Cad_ENM.png)
 
 #### Plano Indirecta
-![ENM_INDIR](Img_Readme/Elementos_mod_no_mod_planos.png)
-
-#### Plano Directa
-![ENM_DIR](Img_Readme/Elementos_mod_no_mod_planos.png)
+![ENM_INDIR](Img_Readme/Plano_Indir_ENM.png)
 
 #### Plano Droguerias.
 ![ENM_DROG](Img_Readme/Plano_Drog_ENM.png)
+
+
+## Modificaciones básicas de los parámetros de configuración. 
+
+### NO modificable 
+
+#### 1. Planos
+| Parámetro         | ¿Es valido modificar?  |
+|-------------------|------------------------|
+| nom_base          | SI                     |
+| nom_hoja          | SI                     |
+| cols              | NO                     |
+| cols_necesarias   | NO                     |
+| cols_para_agregar | NO                     |
+
+
+**A pesar de ser posible no es recomendado hacerlo y es preferible manejar toda la información con los nombres genéricos ya definidos para este documento**
+
+### Auxiliares modificables en archivo "config.yml"
+
+Los siguientes diccionarios de información presentes en el archivo "config.yml" son bastante estables pero pueden ser suceptibles a modificaciones, según se requeria con con cambios de información **Es preciso señalar, que cualquier cambio en el archivo de configuración diferentes a los descritos en este archivo de documentación y / o en el posterior manual de uso pueden conllevar a fallas en la automatización. Se debe ser muy riguroso en este sentido**
+
+### Diccionario de meses_meses-año
+![ELM_CAD](Img_Readme/dict_meses_meses_año.png)
+
+### Diccionario oficina de ventas
+
+![ELM_CAD](Img_Readme/dict_oficina_vtas.png)
+
+### Diccioanrio oficina de ventas agrupada
+
+![ELM_CAD](Img_Readme/dict_oficina_vtas_agrup.png)
+
+### Diccionario sector
+
+![ELM_CAD](Img_Readme/dict_sector.png)
+
+Demas información modificable, se realiza previo a la ejecución de la automatización, por lo que está descrita y consignada en el correspondiente manual de usuario.  (Enlace al final del documento )
+
+
+
+## BD_CXS_ESTATICO
+
+Esto hace referencia al archivo (*.db ) generado por la automatización del CxS_Estatico, ligada y de la cual este proceso es dependiente. Se trata de un archivo (*.db ) que contiene la tabla del cxs antes de la modificaciones del Cxs dinámico. 
+
+
+![Base_CXS_ESTATICO](Img_Readme/BD_Estatico.png)
+
+### Consideraciones archivo (*.db)
+
+El archivo (Insumo_cxs_dinamico.db) viene primeramente como resultado de la automatización del CxS estático. Al correr esta automatización, se sobreescribe (elimina e inserta información), de acuerdo con los parámetros presentes en los planos de información (Cadenas/Directa/Indirecta/Droguerias.) 
+
+### Ruta archivo Insumo_cxs_dinamico en  "config.yml"
+Dado que el archivo puede ser sobreescrito muchas veces, con la información actualizada de planos de información, se utiliza una ruta dinámica. Se explicará su uso en el manual de usuario. 
+
+#### Estructura_básica.
+![ELM_CAD](Img_Readme/db_cxs_estructura_básica.png)
+
+Por recomendación no debe ser alterado ninguno de los parámetros. Tanto la automatización anterior, como la presente están diseñadas para conservarlos a lo largo del tiempo. 
+
+---
+---
+
+## Responsables
+### Provededor - XpertGroup.
+* Daniel jaramillo Bustamante - daniel.jaramillo@xpertgroup.co
+
+### Receptor - Comercial Nutresa.
+* **Aréa TI:**
+    * Sebastián Caro Aguirre scaro@comercialnutresa.com.co
+
+## Enlace al manual de usuario. 
+[Manual de Usuario](ManualDeUsuario.md) 
+
+
